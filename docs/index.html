@@ -1,34 +1,7 @@
 <!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#141715">
-  <meta name="robots" content="noindex,nofollow">
-  <title>主动一点 · AI 服务演示</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
-</head>
-<body>
-  <section class="gate" id="gate" aria-labelledby="gate-title">
-    <div class="gate-art" aria-hidden="true"><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><span class="spark">✳</span><div class="art-caption">LESS ASKING.<br>MORE HELPING.</div></div>
-    <div class="gate-content">
-      <a class="brand" href="./" aria-label="主动一点首页"><span class="brand-mark">✳</span> AI OS <span class="brand-label">体验放映室</span></a>
-      <div class="gate-copy"><span class="eyebrow">PROACTIVE AI / 03 DEMOS</span><h1 id="gate-title">主动一点。<br><span>让帮助先发生。</span></h1><p>从一条通知、一通电话，到一场会议。<br>看看 AI 如何在需要时，向前多走一步。</p>
-        <form id="unlock-form"><label for="password">访问密码</label><div class="password-row"><input id="password" name="password" type="password" autocomplete="current-password" required placeholder="输入密码，开始观看" aria-describedby="gate-status"><button type="submit" id="unlock">进入放映室 <span aria-hidden="true">↗</span></button></div><p id="gate-status" role="status" aria-live="polite"></p></form>
-      </div>
-      <div class="gate-footer"><span>三段真实 Demo 录屏</span><span>手机 × 个人电脑</span></div>
-    </div>
-  </section>
-  <main id="gallery" hidden>
-    <header class="topbar"><a class="brand" href="./"><span class="brand-mark">✳</span> AI OS <span class="brand-label">体验放映室</span></a><button class="lock-button" id="lock">退出并锁定 <span aria-hidden="true">↗</span></button></header>
-    <section class="intro"><div><span class="eyebrow">PROACTIVE AI IN EVERYDAY LIFE</span><h1>主动一点<span class="accent">。</span></h1></div><p>有些帮助，不必等你开口。<br>三个日常场景，看 AI 如何接住下一步。</p></section>
-    <section class="cinema" aria-label="视频放映区">
-      <div class="screen-column"><div class="screen"><video id="player" controls playsinline preload="metadata" aria-label="演示视频"></video><div class="screen-status" id="video-status" role="status" aria-live="polite" hidden></div></div><div class="now-playing"><div><span class="eyebrow" id="playing-kicker"></span><h2 id="playing-title"></h2></div><span class="time-pill" id="playing-duration"></span></div><p class="playing-description" id="playing-description"></p><div class="journey" id="journey" aria-label="演示流程"></div></div>
-      <aside class="playlist" aria-label="选择演示"><div class="playlist-heading"><span>场景目录</span><span>01 — 03</span></div><div id="video-list"></div><p class="playlist-footnote">选择一个场景，点击播放。<br>横屏或全屏观看，细节更清楚。</p></aside>
-    </section>
-    <footer class="footer"><span>AI OS · 主动服务探索</span><span>演示录屏 · 示例数据</span></footer>
-  </main>
-  <noscript>请开启 JavaScript，以解锁和播放演示视频。</noscript>
-</body>
-</html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#141715"><meta name="robots" content="noindex,nofollow"><title>主动一点 · Web 体验</title><link rel="stylesheet" href="styles.css"><script src="config.js"></script><script src="portal.js" defer></script></head>
+<body><header><a class="brand" href="./"><b>✳</b> AI OS <span>原始 Web 体验</span></a><button id="logout" hidden>退出并锁定 ↗</button></header>
+<main><section class="intro"><span class="eyebrow">PROACTIVE AI / LIVE DEMOS</span><h1>主动一点<span>。</span><br><em>在场景里，亲手试试。</em></h1><p>从一条通知、一通电话，到一场会议。<br>选择示例，或补上一句话，看看助理如何接住下一步。</p></section>
+<form id="login"><label for="password">访问密码</label><div class="password-row"><input id="password" type="password" autocomplete="current-password" placeholder="输入密码，进入体验" required><button id="submit">解锁体验 ↗</button></div><p id="status" role="status" aria-live="polite"></p></form>
+<section id="demos" aria-label="选择 Demo" hidden><a class="demo featured" href="notification/"><div class="number">01 / 通知驱动</div><div class="illustration" aria-hidden="true"><span class="phone">手机<br><small>通知 · 日程 · 备忘录</small></span><span class="flow">⇄</span><span class="pc">PC Agent<br><small>本地文件 · 桌面工具</small></span></div><h2>手机发现，电脑接力 <span>↗</span></h2><p>推送通知，让助理生成事项、准备资料、起草回复；把需要个人电脑的任务交出去，再看结果回到手机。</p><span class="enter">进入通知助理 · 手机与 PC</span></a><a class="demo" href="call/"><div class="number">02 / 随听 · 通话</div><div class="illustration waves" aria-hidden="true">▂ ▅ ▃ █ ▅ ▂ ▆ ▄</div><h2>边聊边找，及时到场 <span>↗</span></h2><p>播放示例通话或补一句话，查看个人信息卡片召回、新信息草稿与确认保存。</p><span class="enter">进入通话助理</span></a><a class="demo" href="meeting/"><div class="number">03 / 线下会议</div><div class="illustration" aria-hidden="true"><span class="fold">谁答应了什么？<small>文件 · 承诺 · 决定</small></span></div><h2>安静听见，记下重点 <span>↗</span></h2><p>播放多人会议或现场发言，在折叠外屏里看文件、承诺与决定，再整理会后汇总。</p><span class="enter">进入会议助理</span></a></section>
+</main><footer><span>AI OS · 主动服务探索</span><span>推理运行在常开设备 · 虚构示例数据</span></footer><noscript>请开启 JavaScript 体验这些 Demo。</noscript></body></html>

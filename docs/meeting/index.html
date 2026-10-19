@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><script src="/proactive-ai-demos/config.js"></script><script src="/proactive-ai-demos/bootstrap.js" data-app="models"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>随听 · 会议助理</title><link rel="stylesheet" href="/proactive-ai-demos/call/style.css"><link rel="stylesheet" href="/proactive-ai-demos/meeting/style.css"><script src="/proactive-ai-demos/vendor/lucide.js" defer></script><script src="/proactive-ai-demos/meeting/app.js" type="module"></script></head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="logo"><i data-lucide="users-round"></i></span><div>随听 · 会议<small>线下会议与闲聊：谁答应了什么，提到哪份文件</small></div></div>
+    <div class="stack"><span><b>Paraformer</b> 中文转写</span><span><b>3D-Speaker</b> 声纹分人</span><span><b>EmbeddingGemma 2</b> 文件召回</span><span><b>规则</b> 承诺与决定</span><span>全部本机</span></div>
+    <nav><a href="/proactive-ai-demos/">演示首页</a><a href="/proactive-ai-demos/notification/">通知 · 手机与 PC</a><a href="/proactive-ai-demos/call/">通话助理</a><a href="/proactive-ai-demos/meeting/">会议助理</a><a href="/proactive-ai-demos/" data-demo-logout>退出</a></nav>
+  </header>
+  <main>
+    <section class="library">
+      <div class="head"><h2>手机里的文件</h2><span id="card-count">0</span></div>
+      <p class="hint">虚构样例：文档、表格、幻灯片、相册与备忘录。会上确认的承诺和会后纪要也会存进来，之后可再被召回。</p>
+      <div id="library"></div>
+    </section>
+
+    <section class="stage">
+      <div class="demo-bar">
+        <div class="seg" id="script-seg" role="radiogroup" aria-label="示例"></div>
+        <div class="demo-row">
+          <div class="seg" id="mode-seg" role="radiogroup" aria-label="输入方式">
+            <button type="button" data-mode="voice" title="阶跃多人语音 → 本地转写 + 声纹">真实语音</button><button type="button" data-mode="text" title="跳过语音，最快">文字</button>
+          </div>
+          <button id="play" class="primary"><i data-lucide="play"></i><span>播放</span></button>
+        </div>
+        <input type="hidden" id="script"><input type="hidden" id="mode" value="voice">
+      </div>
+      <div class="fold">
+        <div class="cover" aria-label="Pura X 外屏">
+          <div class="cover-top">
+            <span class="rec" id="rec"><i data-lucide="audio-lines"></i></span>
+            <b id="title">未开始</b><span class="timer" id="timer">00:00</span>
+          </div>
+          <div class="seats" id="people"></div>
+          <div class="stage-mid"><div class="peek" id="peek" aria-live="polite"></div><div class="idle" id="idle"><i data-lucide="audio-lines"></i><span>聆听中，有承诺或文件时显示在这里</span></div></div>
+          <div class="captions" id="captions" aria-live="polite"></div>
+          <div class="cover-foot">
+            <button id="mic" class="pill" title="现场录音"><i data-lucide="mic"></i></button>
+            <span class="tally" id="tally">承诺 0 · 文件 0</span>
+            <button id="end" class="pill" title="结束并汇总"><i data-lucide="clipboard-list"></i></button>
+          </div>
+        </div>
+        <p class="fold-note"><span id="place">Pura X 折叠外屏 · 放在桌上即可记录</span><br><span id="mic-state">现场模式按声纹自动分人，点击名字可改名</span></p>
+        <form id="say" class="say"><select id="say-who" aria-label="说话人"></select><input id="say-text" maxlength="400" placeholder="补一句发言…" autocomplete="off"><button aria-label="发送"><i data-lucide="arrow-up"></i></button></form>
+      </div>
+    </section>
+
+    <section class="assist">
+      <div class="head"><h2><i data-lucide="folder-search"></i>提到的文件</h2><span id="recall-count">0</span></div>
+      <div id="recalls" class="empty-wrap"><p class="empty">有人提到“上次那份表”“方案第三版”时，相关文件会出现在这里。</p></div>
+      <div class="head"><h2><i data-lucide="handshake"></i>承诺与决定</h2><span id="draft-count">0</span></div>
+      <div id="drafts" class="empty-wrap"><p class="empty">有人说“我来…”“你周一前把…”时，记下负责人与截止时间，等你确认。</p></div>
+      <div id="summary"></div>
+      <details class="trace"><summary>判断记录</summary><div id="trace"></div></details>
+    </section>
+  </main>
+  <div id="toast" class="toast" hidden></div>
+</body>
+</html>

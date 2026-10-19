@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><script src="/proactive-ai-demos/config.js"></script><script src="/proactive-ai-demos/bootstrap.js" data-app="models"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>随听 · 通话助理</title><link rel="stylesheet" href="/proactive-ai-demos/call/style.css"><script src="/proactive-ai-demos/vendor/lucide.js" defer></script><script src="/proactive-ai-demos/call/app.js" type="module"></script></head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="logo"><i data-lucide="phone-call"></i></span><div>随听<small>通话中主动召回与记录个人数据</small></div></div>
+    <div class="stack" id="stack"><span><b>Julia-1</b> 类 Jev 判断</span><span><b>EmbeddingGemma 2</b> 卡片召回</span><span><b>Paraformer</b> 中文转写</span></div>
+    <nav><a href="/proactive-ai-demos/">演示首页</a><a href="/proactive-ai-demos/notification/">通知 · 手机与 PC</a><a href="/proactive-ai-demos/call/">通话助理</a><a href="/proactive-ai-demos/meeting/">会议助理</a><a href="/proactive-ai-demos/" data-demo-logout>退出</a></nav>
+  </header>
+  <main>
+    <section class="library">
+      <div class="head"><h2>手机里的个人数据</h2><span id="card-count">0</span></div>
+      <p class="hint">虚构样例：联系人、日历、文件、备忘录、订单与卡包。通话中确认的新卡片也会加入这里，立即可被召回。</p>
+      <div id="library"></div>
+    </section>
+
+    <section class="stage">
+      <div class="controls">
+        <select id="script" aria-label="示例通话"></select>
+        <select id="mode" aria-label="输入方式"><option value="voice">阶跃真实语音 → 本地转写</option><option value="text">直接文字（最快）</option></select>
+        <button id="play" class="primary"><i data-lucide="play"></i><span>播放示例通话</span></button>
+      </div>
+      <div class="phone">
+        <div class="call-head">
+          <div class="avatar" id="avatar">李</div>
+          <div class="caller" id="caller">未在通话</div>
+          <div class="number" id="number">选择示例或开始现场通话</div>
+          <div class="timer" id="timer">00:00</div>
+        </div>
+        <div class="captions" id="captions" aria-live="polite"></div>
+        <div class="peek" id="peek" aria-live="polite"></div>
+        <div class="call-actions">
+          <button id="mic" class="round" title="现场麦克风"><i data-lucide="mic"></i></button>
+          <button id="hangup" class="round end" title="挂断"><i data-lucide="phone-off"></i></button>
+          <button id="speaker" class="round" title="切换说话方"><i data-lucide="repeat"></i></button>
+        </div>
+        <div class="mic-state" id="mic-state">麦克风关闭 · 当前说话方：<b id="who">对方</b></div>
+        <form id="say" class="say"><input id="say-text" maxlength="400" placeholder="以当前说话方补一句…" autocomplete="off"><button aria-label="发送"><i data-lucide="arrow-up"></i></button></form>
+      </div>
+    </section>
+
+    <section class="assist">
+      <div class="head"><h2><i data-lucide="sparkles"></i>此刻相关</h2><span id="recall-count">0</span></div>
+      <div id="recalls" class="empty-wrap"><p class="empty">对方问到你手机里已有的信息时，卡片会出现在这里。</p></div>
+      <div class="head"><h2><i data-lucide="notebook-pen"></i>通话中记下</h2><span id="draft-count">0</span></div>
+      <div id="drafts" class="empty-wrap"><p class="empty">对方说出新时间、号码、取件码等信息时，先存为草稿，由你确认。</p></div>
+      <details class="trace"><summary>判断记录</summary><div id="trace"></div></details>
+    </section>
+  </main>
+  <div id="toast" class="toast" hidden></div>
+</body>
+</html>
