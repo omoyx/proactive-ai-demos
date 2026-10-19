@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#141715">
+  <meta name="robots" content="noindex,nofollow">
+  <title>主动一点 · AI 服务演示</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <section class="gate" id="gate" aria-labelledby="gate-title">
+    <div class="gate-art" aria-hidden="true"><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><span class="spark">✳</span><div class="art-caption">LESS ASKING.<br>MORE HELPING.</div></div>
+    <div class="gate-content">
+      <a class="brand" href="./" aria-label="主动一点首页"><span class="brand-mark">✳</span> AI OS <span class="brand-label">体验放映室</span></a>
+      <div class="gate-copy"><span class="eyebrow">PROACTIVE AI / 03 DEMOS</span><h1 id="gate-title">主动一点。<br><span>让帮助先发生。</span></h1><p>从一条通知、一通电话，到一场会议。<br>看看 AI 如何在需要时，向前多走一步。</p>
+        <form id="unlock-form"><label for="password">访问密码</label><div class="password-row"><input id="password" name="password" type="password" autocomplete="current-password" required placeholder="输入密码，开始观看" aria-describedby="gate-status"><button type="submit" id="unlock">进入放映室 <span aria-hidden="true">↗</span></button></div><p id="gate-status" role="status" aria-live="polite"></p></form>
+      </div>
+      <div class="gate-footer"><span>三段真实 Demo 录屏</span><span>手机 × 个人电脑</span></div>
+    </div>
+  </section>
+  <main id="gallery" hidden>
+    <header class="topbar"><a class="brand" href="./"><span class="brand-mark">✳</span> AI OS <span class="brand-label">体验放映室</span></a><button class="lock-button" id="lock">退出并锁定 <span aria-hidden="true">↗</span></button></header>
+    <section class="intro"><div><span class="eyebrow">PROACTIVE AI IN EVERYDAY LIFE</span><h1>主动一点<span class="accent">。</span></h1></div><p>有些帮助，不必等你开口。<br>三个日常场景，看 AI 如何接住下一步。</p></section>
+    <section class="cinema" aria-label="视频放映区">
+      <div class="screen-column"><div class="screen"><video id="player" controls playsinline preload="metadata" aria-label="演示视频"></video><div class="screen-status" id="video-status" role="status" aria-live="polite" hidden></div></div><div class="now-playing"><div><span class="eyebrow" id="playing-kicker"></span><h2 id="playing-title"></h2></div><span class="time-pill" id="playing-duration"></span></div><p class="playing-description" id="playing-description"></p><div class="journey" id="journey" aria-label="演示流程"></div></div>
+      <aside class="playlist" aria-label="选择演示"><div class="playlist-heading"><span>场景目录</span><span>01 — 03</span></div><div id="video-list"></div><p class="playlist-footnote">选择一个场景，点击播放。<br>横屏或全屏观看，细节更清楚。</p></aside>
+    </section>
+    <footer class="footer"><span>AI OS · 主动服务探索</span><span>演示录屏 · 示例数据</span></footer>
+  </main>
+  <noscript>请开启 JavaScript，以解锁和播放演示视频。</noscript>
+</body>
+</html>

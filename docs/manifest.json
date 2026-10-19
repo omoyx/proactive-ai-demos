@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "kdf": {
+    "salt": "2RMg8jIDvYWy+f9IhCi3SoQt+rq2+CDQ+i3AKjlBzBY=",
+    "iterations": 600000
+  },
+  "check": {
+    "file": "media/gallery-check.bin",
+    "iv": "eQqqdQPv1u1TWxV1",
+    "aad": "gallery:check",
+    "bytes": 38
+  },
+  "videos": [
+    {
+      "id": "proactive",
+      "title": "通知驱动助理",
+      "subtitle": "手机发现任务，个人电脑接力",
+      "description": "一条通知变成日程与待办。助理提前准备资料，需要本机文件与桌面软件时，交给 PC Agent 处理，再把结果带回手机。",
+      "steps": [
+        "手机通知",
+        "日程与待办",
+        "助理准备",
+        "PC 执行",
+        "回传手机"
+      ],
+      "duration": 159.695,
+      "video": {
+        "file": "media/proactive-video.bin",
+        "iv": "BswdTV/Nv9iAGPig",
+        "aad": "proactive:video",
+        "bytes": 5507337
+      },
+      "poster": {
+        "file": "media/proactive-poster.bin",
+        "iv": "KkMZJtfSwnO3+D7x",
+        "aad": "proactive:poster",
+        "bytes": 38916
+      }
+    },
+    {
+      "id": "call",
+      "title": "随听 · 通话助理",
+      "subtitle": "边聊边找，信息及时到场",
+      "description": "通话里提到客户、订单或家人，相关信息卡片随话题出现。新时间、号码与约定生成待确认草稿，保存后还能再次召回。",
+      "steps": [
+        "通话进行",
+        "相关卡片",
+        "新信息草稿",
+        "确认保存"
+      ],
+      "duration": 136.32,
+      "video": {
+        "file": "media/call-video.bin",
+        "iv": "sdPNykypP5Wj48h0",
+        "aad": "call:video",
+        "bytes": 5227731
+      },
+      "poster": {
+        "file": "media/call-poster.bin",
+        "iv": "XRhGVLifHEvY+few",
+        "aad": "call:poster",
+        "bytes": 20707
+      }
+    },
+    {
+      "id": "meeting",
+      "title": "线下会议静默助理",
+      "subtitle": "听清谁答应了什么，找回提到的文件",
+      "description": "把折叠手机放在桌上，安静记录发言、承诺与决定。提到文件就召回，会后把有用的信息整理为待办和备忘录。",
+      "steps": [
+        "多人会议",
+        "文件召回",
+        "承诺与决定",
+        "会后汇总"
+      ],
+      "duration": 166.04,
+      "video": {
+        "file": "media/meeting-video.bin",
+        "iv": "fxamPsBveCTBOP0B",
+        "aad": "meeting:video",
+        "bytes": 7854655
+      },
+      "poster": {
+        "file": "media/meeting-poster.bin",
+        "iv": "GvvLfKu07EZpJm9k",
+        "aad": "meeting:poster",
+        "bytes": 31993
+      }
+    }
+  ]
+}
