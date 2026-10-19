@@ -39,7 +39,7 @@
     }
     close() { this.closed = true; clearTimeout(this.timer); this.controller?.abort(); }
   }
-  if (service === 'notification') window.EventSource = AuthenticatedEvents;
+  if (service.startsWith('notification')) window.EventSource = AuthenticatedEvents;
   document.addEventListener('click', async event => {
     if (!event.target.closest('[data-demo-logout]')) return;
     event.preventDefault();
