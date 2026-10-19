@@ -3,7 +3,7 @@
   const service = document.currentScript.dataset.app;
   const token = sessionStorage.getItem('proactive-web-session');
   const originalFetch = window.fetch.bind(window);
-  const expire = () => { sessionStorage.removeItem('proactive-web-session'); location.replace(base); };
+  const expire = () => { sessionStorage.removeItem('proactive-web-session'); location.replace(`${base}?v=live`); };
   if (!token) { document.documentElement.style.visibility = 'hidden'; expire(); return; }
   window.fetch = async (input, init = {}) => {
     const raw = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url;
